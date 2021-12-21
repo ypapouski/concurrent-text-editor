@@ -1,0 +1,49 @@
+{
+  "name": "concurrent-text-editor",
+  "version": "1.0.0",
+  "description": "Concurrent text editor",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --node-env=production --config=config/webpack.config.js",
+    "build:dev": "webpack --mode=development --config=config/webpack.config.js",
+    "build:prod": "webpack --mode=production --node-env=production --config=config/webpack.config.js",
+    "watch": "webpack --watch --config=config/webpack.config.js",
+    "serve": "webpack serve --config=config/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ypapouski/concurrent-text-editor.git"
+  },
+  "keywords": [
+    "editor"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "author": "Yuri Papouski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ypapouski/concurrent-text-editor/issues"
+  },
+  "homepage": "https://github.com/ypapouski/concurrent-text-editor#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ws": "^8.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@webpack-cli/generators": "^2.4.1",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.45.1",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}
