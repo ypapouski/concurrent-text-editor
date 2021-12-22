@@ -1,0 +1,22 @@
+.text-editor {
+  min-height: 200px;
+  max-width: 600px;
+  border: 1px solid lightblue;
+  border-radius: 4px;
+  outline: unset;
+  &:focus {
+    border: 1px solid cornflowerblue;
+    background-color: whitesmoke;
+  }
+}
+
+.user-caret {
+  cursor: pointer;
+  &:after {
+    content: "|";
+  }
+  visibility: visible;
+  &.hidden {
+    visibility: hidden;
+  }
+}
