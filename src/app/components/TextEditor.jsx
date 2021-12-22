@@ -42,7 +42,47 @@ const saveCaretPosition = (ref) => {
  */
 const setCaretPosition = (ref) => {
   if (ref.current && caretPosition) {
+    try {
+      const selection = window.getSelection();
+      const range = document.createRange();
 
+      let startNode = ref.current.firstChild;
+      let adjustedCaredPosition = caretPosition;
+      if (startNode.nodeType !== Node.TEXT_NODE || caretPosition > startNode.textContent.length) {
+        const findNode = (startNode, caretPosition) => {
+          let correctedCaretPosition = caretPosition;
+          for (let child of startNode.childNodes) {
+            if (child.nodeType !== Node.TEXT_NODE) {
+              const result = findNode(child, correctedCaretPosition);
+              if (result) return result;
+              continue;
+            }
+            const childContent = child.textContent;
+            if (correctedCaretPosition > childContent.length) {
+              correctedCaretPosition -= childContent.length;
+              if (child.hasChildNodes()) {
+                const result = findNode(child, correctedCaretPosition);
+                if (result) return result;
+              }
+            } else {
+              return [child, correctedCaretPosition];
+            }
+          }
+        };
+        const result = findNode(ref.current, caretPosition);
+        if (!result) return;
+        [startNode, adjustedCaredPosition] = result;
+      }
+      range.setStart(startNode, adjustedCaredPosition);
+      range.collapse(true);
+
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      ref.current.focus();
+    } catch (e) {
+      console.error('Could not set caret. Error: ', e);
+    }
   }
 };
 
