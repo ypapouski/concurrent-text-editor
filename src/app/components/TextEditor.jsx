@@ -105,6 +105,7 @@ const updatePosition = debounce((user, updateUserTextPosition) => {
  */
 const updateText = debounce((user, updateUserText, ref) => {
   if (ref.current) {
+    // IMPROVE. Sync only changed text.
     const clonedTextDom = ref.current.cloneNode(true);
     Array
       .from(clonedTextDom.querySelectorAll('.user-caret'))

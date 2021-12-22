@@ -16,6 +16,7 @@ const TextEditorContainer = ({ service }) => {
     }
   }, []);
 
+  // IMPROVE. Add loader spinners.
   if (!usersState) return null;
 
   const { user, others, text } = usersState;
