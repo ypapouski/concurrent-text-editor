@@ -1,8 +1,8 @@
 # 🚀 Welcome to awesome text editor project!
 
-The text editor gives a possibilty for many users to edit the same document and reflects the current users' activities as well.
+The text editor gives a possibility for many users to edit the same document and reflects the current users' activities as well.
 
-Installation and programm execution steps
+Installation and program execution steps
 
 ```
 Install all project's dependencies: npm install

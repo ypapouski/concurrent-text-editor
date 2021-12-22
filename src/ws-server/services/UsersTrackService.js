@@ -14,6 +14,7 @@ class UsersTrackService {
     const id = ++this.uid;
     const user = {
       id,
+      // IMPROVE. Probably it's not the server responsibility for managing colors.
       color: Math.floor(Math.random() * 0xFFFFFF).toString(16),
       name: `Unknown ${id}`,
       caretPosition: 0,
