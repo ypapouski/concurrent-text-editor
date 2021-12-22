@@ -1,0 +1,20 @@
+.user-name-container {
+  display: inline-flex;  
+}
+
+.user-name-label {
+  cursor: pointer;
+  border-radius: 4px;
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+
+.user-name-editable {
+  outline: unset;
+  border-radius: 4px;
+  &:focus {
+    border: 1px solid cornflowerblue;
+    background-color: whitesmoke;
+  }
+}

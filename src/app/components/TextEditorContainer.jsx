@@ -19,10 +19,17 @@ const TextEditorContainer = ({ service }) => {
   if (!usersState) return null;
 
   const { user, others, text } = usersState;
+  const { updateUserName, updateUserText, updateUserTextPosition } = service;
   return (
     <div>
-      <UserName user={user} updateUserName={service.updateUserName}/>
-      <TextEditor user={user} others={others} text={text} updateUserText={service.updateUserText}/>
+      <UserName user={user} updateUserName={updateUserName}/>
+      <TextEditor
+        user={user}
+        others={others}
+        text={text}
+        updateUserText={updateUserText}
+        updateUserTextPosition={updateUserTextPosition}
+      />
     </div>
   );
 };

@@ -46,7 +46,7 @@ class UsersTrackService {
     const { id, text, ...restData } = JSON.parse(data.toString());
     if (id) {
       const user = this.users[id];
-      this.text = text;
+      if (text !== undefined) this.text = text;
       Object.assign(user, restData);
       Object.entries(this.users)
         .filter(([ userId ]) => userId != id)

@@ -7,6 +7,7 @@ export default class UserService {
     this.handleWsMessage = this.handleWsMessage.bind(this);
     this.updateUserName = this.updateUserName.bind(this);
     this.updateUserText = this.updateUserText.bind(this);
+    this.updateUserTextPosition = this.updateUserTextPosition.bind(this);
 
     this.ws = new WebSocket('ws://localhost:8081/users');
     this.ws.addEventListener('open', () => console.info('WebSocket opened'));
@@ -57,6 +58,15 @@ export default class UserService {
    */
   updateUserText(id, text, caretPosition) {
     this.sendWsMessage({ id, text, caretPosition });
+  }
+
+  /**
+   * Update a user text state
+   * @param {Number} id - a user identifier
+   * @param {Number} caretPosition - a caret position
+   */
+  updateUserTextPosition(id, caretPosition) {
+    this.sendWsMessage({ id, caretPosition });
   }
 
   /**
