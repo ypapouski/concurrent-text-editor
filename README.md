@@ -1,15 +1,16 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to awesome text editor project!
 
-This project has been created using **webpack-cli**, you can now run
+The text editor gives a possibilty for many users to edit the same document and reflects the current users' activities as well.
 
-```
-npm run build
-```
-
-or
+Installation and programm execution steps
 
 ```
-yarn build
+Install all project's dependencies: npm install
+
+Start up a web-socket server: npm run ws
+The command depends on NodeJS.
+
+Start up a web-server: npm run serve
 ```
 
-to bundle your application
+After these steps the application will be served by a webpack development server located by http://localhost:8080/ address.
